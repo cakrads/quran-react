@@ -1,13 +1,280 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 body {
+  font-size: 16px;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: rgba(0, 0, 0, 0.84);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+a,
+.primary {
+  color: #bd9667
+}
+
+a:hover {
+  color: #ffe0ae;
+}
+
+@font-face {
+  font-family: 'Kemenag';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./assets/fonts/LPMQ.ttf');
+}
+
+@font-face {
+  font-family: 'Usmani';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./assets/fonts/uthmanic.otf');
+}
+
+@font-face {
+  font-family: 'Maddina';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./assets/fonts/maddina.ttf');
+}
+
+.arabic-font-kemanag {
+  font-family: 'Kemenag';
+}
+
+.arabic-font-usmani {
+  font-family: 'Usmani';
+}
+
+
+.arabic-font {
+  font-size: 1.4rem;
+  text-align: justify;
+  line-height: 3.1rem;
+}
+
+.arabic-font-number {
+  font-family: 'Maddina';
+  display: inline-block;
+  /* background: red; */
+  background-repeat: no-repeat;
+  background-image: url("./assets/images/sparator.png");
+  margin-right: .3rem;
+  margin-left: .3rem;
+  background-size: 1.8rem 2.1rem;
+  background-position: 0rem 0rem;
+  width: 1.8rem;
+  line-height: 2.4rem;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #bd9667;
+}
+
+.arabic-font-caligrafy {
+  font-family: 'Lemonada', cursive;
+}
+
+.container {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#home-page {
+  padding-top: 1rem;
+  margin-bottom: 4.4rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: .5rem 0rem;
+}
+
+h2 a {
+  text-decoration: none;
+}
+
+h2 a:hover {
+  color: #fab545;
+}
+
+#chapter-page {
+  padding-top: 1.2rem;
+  margin-bottom: 4.4rem;
+}
+
+#side-menu .quranku-side-menu {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  z-index: 1000;
+  transform: translateX(-100%);
+  background-color: #3f3f41;
+  transition: 0.5s;
+}
+
+#side-menu .quranku-side-menu.sideBarOpen {
+  transform: translateX(0);
+}
+
+#side-menu .side-menu-top {
+  height: 70px;
+  padding: 1.8rem 1rem 1.8rem 1.8rem;
+  background: rgb(189, 150, 103);
+  color: #fff;
+}
+
+#side-menu .side-menu-items {
+  height: 100%;
+  padding: 30px 30px;
+  overflow-x: hidden;
+}
+
+#side-menu .side-menu-items a {
+  display: block;
+  margin: 1rem 0rem;
+}
+
+#side-menu .sideMenuOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  background: #00000094;
+  z-index: 999;
+  transition: opacity 0.2s ease;
+}
+
+#side-menu .sideMenuOverlay .togle-opener {
+  margin: 1rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+#side-menu .side-menu-top .togle-opener {
+  color: rgb(211, 211, 211);
+  cursor: pointer;
+  float: right;
+}
+
+
+
+nav {
+  padding: .5rem 1rem;
+  background: #fff;
+  display: flex;
+  width: 100%;
+  box-shadow: rgba(189, 150, 103, 157) 0px 1px 5px;
+  color: #bd9667;
+  font-weight: 700;
+  align-items: center;
+}
+
+.burger,
+nav .fa-chevron-left {
+  margin-right: 1rem;
+}
+
+.burger:hover {
+  cursor: pointer;
+}
+
+.search-bar-nav {
+  display: block;
+  height: 2rem;
+  padding: .4rem .5rem;
+  border: medium none;
+  border-radius: 8px;
+  outline: currentcolor none medium;
+  background-color: rgb(246, 246, 246);
+  color: rgba(179, 179, 179, 0.68);
+  font-size: .9rem;
+  line-height: 20px;
+  margin-right: .5rem;
+}
+
+.search-bar-nav .search-input {
+  display: block;
+  height: 36px;
+  width: 100%;
+  padding: 12px 24px 12px 28px;
+  border: medium none;
+  border-radius: 8px;
+  outline: currentcolor none medium;
+  background-color: rgb(246, 246, 246);
+  color: rgba(49, 53, 59, 0.68);
+  font-size: 1rem;
+  line-height: 20px;
+}
+
+.search-bar-nav .fa {
+  margin-right: .5rem;
+  display: inline-block;
+}
+
+
+#header-search {
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0rem;
+}
+
+#header-search nav .search-bar-nav {
+  width: 100%;
+  background: #fff;
+}
+
+#header-search nav .search-bar-nav input {
+  border: none;
+  width: 80%;
+}
+
+#header-search nav .search-bar-nav input::placeholder {
+  color: rgba(179, 179, 179, 0.68);
+}
+
+.ReactSwipeableBottomSheet--open,
+.ReactSwipeableBottomSheet,
+.ReactSwipeableBottomSheet--closed {
+  background-color: none !important;
+}
+
+#bottom-sheet {
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  padding-top: .7rem;
+  background: #fff;
+  padding: .5rem 1rem 1rem 1rem;
+  border: solid thin rgb(201, 201, 201);
+  box-shadow: rgba(0, 0, 0, 0.157) 0px -1px 5px;
+}
+
+#bottom-sheet .toggle-announce {
+  width: 5rem;
+  height: .2rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #bd9667;
+}
+
+#bottom-sheet h2.title-bottom {
+  text-align: center;
+  margin: .5rem 0rem 0.5rem;
 }
