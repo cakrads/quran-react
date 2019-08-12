@@ -1,24 +1,15 @@
 import React from "react";
+import ItemSurah from "./ItemSurah";
 
-const ItemsSurahComponent = props => {
-  const surah = props.surah;
+const ItemsSurah = props => {
   return (
-    <span key={surah.aya_id}>
-      {surah.aya_text}
-      <span className="arabic-font-number">{surah.aya_number}</span>
-    </span>
-    <h2 key={surah.slug}>
-            <Link to={`/${surah.slug}`}>{surah.surat_name}</Link>
-            <div
-              className="arabic-font arabic-font-kemanag"
-              dir="rtl"
-              lang="ar"
-              align="center"
-            >
-              {surah.surat_text}
-            </div>
-          </h2>
+    <div id="my-read">
+      <h2>Surah</h2>
+      {props.quran.allSurah().map((surah, index) => (
+        <ItemSurah key={index} surah={surah} />
+      ))}
+    </div>
   );
 };
 
-export default ItemsSurahComponent;
+export default ItemsSurah;

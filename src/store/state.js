@@ -5,6 +5,7 @@ import * as actions from "./action.js";
 
 const initialState = {
     searchText: "",
+    selectedAya: null
 };
 
 const useGlobal = useGlobalHook(React, initialState, actions);

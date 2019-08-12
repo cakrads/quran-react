@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Surahs from "./../components/Surahs/Surahs";
+import Bismillah from "./../components/Surahs/Bismillah";
 import BottomSheet from "./../components/BottomSheet/BottomSheet";
 import QuranAPI from "./../api/_chapter";
 
@@ -21,8 +22,9 @@ const ChapterPage = props => {
 
   return (
     <div id="chapter-page">
+      <Bismillah surah={surah} quranAPI={QuranAPI} />
       <Surahs chapter={chapter} />
-      <BottomSheet chapter={chapter} surah={surah}/>
+      <BottomSheet chapter={chapter} surah={surah} />
     </div>
   );
 };

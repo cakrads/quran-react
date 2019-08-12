@@ -1,24 +1,19 @@
 import React from "react";
 import QuranAPI from "./../api/_chapter";
-import Carousel from "./../components/Carousel/index";
-import { Item } from "./../components/Carousel/carousel-components";
-import { ItemSurah } from "./../components/ItemsSurah/ItemSurah";
+import MyCarausel from "./../components/Carousel/MyCarausel";
+import ItemsSurah from "./../components/ItemsSurah/ItemsSurah";
 
 const Home = () => {
+  // console.log(QuranAPI.allSurah()[35]);
+  // console.log(QuranAPI.allSurah()[54]);
+  // console.log(QuranAPI.allSurah()[17]);
+  // console.log(QuranAPI.allSurah()[77]);
+  // console.log(QuranAPI.allSurah()[66]);
+
   return (
     <div id="home-page">
-      <Carousel title="Carousel">
-        <Item img="https://unsplash.it/475/205" />
-        <Item img="https://unsplash.it/476/205" />
-        <Item img="https://unsplash.it/477/205" />
-        <Item img="https://unsplash.it/478/205" />
-        <Item img="https://unsplash.it/479/205" />
-      </Carousel>
-      <div>
-        {QuranAPI.allSurah().map((surah, index) => (
-          <ItemSurah key={index} surah={surah} />
-        ))}
-      </div>
+      <MyCarausel quran={QuranAPI} /> 
+      <ItemsSurah quran={QuranAPI} />
     </div>
   );
 };

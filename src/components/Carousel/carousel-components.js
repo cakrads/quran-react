@@ -6,9 +6,14 @@ export const PREV = "PREV";
 export const Item = styled.div `
   text-align: center;
   height: 100px;
-  background-image: ${props => `url(${props.img})`};
-  background-size: cover;
-  border-radius: 1rem; 
+  ${'' /* background-image: ${props => `url(${props.img})`}; */}
+  ${'' /* background-size: cover; */}
+  background-color: ${props => `${props.bgColor}`};
+  border-radius: 1rem;
+  align-items: center;
+  color: #fff;
+  padding: .5rem;
+  text-decoration: none;
 `;
 
 export const CarouselContainer = styled.div `

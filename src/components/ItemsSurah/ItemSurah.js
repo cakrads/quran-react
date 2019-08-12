@@ -5,8 +5,11 @@ const ItemSurah = props => {
   const surah = props.surah;
   return (
     <Link to={`/${surah.slug}`} className="item-surah">
-      <h2 key={surah.slug}>
-        {surah.surat_name}
+      <div className="item">
+        <h2>{surah.surat_name}</h2>
+        {surah.surat_terjemahan}
+      </div>
+      <div className="item">
         <div
           className="arabic-font arabic-font-kemanag"
           dir="rtl"
@@ -15,7 +18,7 @@ const ItemSurah = props => {
         >
           {surah.surat_text}
         </div>
-      </h2>
+      </div>
     </Link>
   );
 };

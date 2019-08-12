@@ -4,3 +4,10 @@ export const setSearchText = (store, text) => {
         searchText
     });
 };
+
+export const setSelectedAya = (store, selected) => {
+    const selectedAya = selected;
+    store.setState({
+        selectedAya
+    });
+};
